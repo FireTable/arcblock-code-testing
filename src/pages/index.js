@@ -1,16 +1,24 @@
-import styles from './index.less';
 import logo from './logo.svg';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const Wrapper = styled.div``;
+
+const GlobalStyle = createGlobalStyle`
+  #root{
+    height: 100vh;
+  }
+  
+  // rightContent居中
+  .ant-pro-right-content {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 export default function IndexPage() {
   return (
-    <div className={styles.app}>
-      <img src={logo} className={styles['app-logo']} alt="logo" />
-      <pre style={{margin: '1em 0'}}>
-        <code>window.blocklet = {JSON.stringify(window.blocklet, null, 2)}</code>
-      </pre>
-      <a className={styles['app-link']} href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
-        Learn Blocklet
-      </a>
-    </div>
+    <Wrapper>
+      <GlobalStyle />
+    </Wrapper>
   );
 }

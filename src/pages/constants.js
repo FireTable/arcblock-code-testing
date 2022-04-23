@@ -2,12 +2,12 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 09:53:00
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 22:29:40
+ * @ Modified time: 2022-04-24 00:04:34
  * @ Description: 常量大全
  */
 
 import { isNumber, random } from 'lodash';
-import { formatNumber } from '../utils';
+import { formatNumber } from '@/utils';
 import { Tag, Col, Row } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
 

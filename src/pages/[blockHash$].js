@@ -2,17 +2,17 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 01:03:48
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 22:46:58
+ * @ Modified time: 2022-04-24 01:23:03
  * @ Description: blockHash信息, :blockHash为可选路由参数, 通过umijs的路由约定自动匹配 /:blockHash
  */
 import styled, { createGlobalStyle } from 'styled-components';
 import { useParams, useRequest } from 'umi';
-import { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { BLOCK_DATA_COLUMNS, TRANSACTION_COLUMNS } from './constants';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import ProCard from '@ant-design/pro-card';
 import ProList from '@ant-design/pro-list';
-import CustomValueTypeProvider from '../components/CustomValueTypeProvider';
+import CustomValueTypeProvider from '@/components/CustomValueTypeProvider';
 import { Badge, Result, Switch } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 import { useReactive } from 'ahooks';
@@ -61,11 +61,10 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px;
   }
   
-
-  
 `;
 
-export default function IndexPage() {
+export default function BlockHashPage() {
+  // 最新的umijs的jest搭配enzyme的问题, 在enzyme中使用useParams, useRequest, useReactive, useMemo, useEffect, useState等hooks时, 会报错
   const { blockHash } = useParams();
 
   const state = useReactive({
@@ -228,7 +227,7 @@ export default function IndexPage() {
   // 无blockHash, 提示
   if (!blockHash) {
     ChildrenComponent = (
-      <Result style={{ margin: '30vh 0' }} icon={<SmileOutlined />} title="Waiting for you search." subTitle={''} />
+      <Result style={{ margin: '30vh 0' }} icon={<SmileOutlined />} title="Waiting for you..." subTitle={''} />
     );
   }
 

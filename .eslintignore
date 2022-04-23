@@ -1,6 +1,7 @@
 public
 dist
 build
+setupTests.js
 
 .blocklet
 node_modules

@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 01:03:48
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 18:24:04
+ * @ Modified time: 2022-04-23 21:16:53
  * @ Description: umijs的配置文件, 详见: umijs.org
  */
 
@@ -22,7 +22,9 @@ export default defineConfig({
     navTheme: 'dark',
     logo: './logo.svg',
   },
-  dynamicImport: {},
+  dynamicImport: {
+    loading: '@/components/PageLoading',
+  },
   mfsu: {},
   nodeModulesTransform: {
     type: 'none',

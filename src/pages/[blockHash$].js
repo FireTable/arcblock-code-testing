@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 01:03:48
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 19:37:51
+ * @ Modified time: 2022-04-23 21:13:20
  * @ Description: blockHash信息, :blockHash为可选路由参数, 通过umijs的路由约定自动匹配 /:blockHash
  */
 import styled, { createGlobalStyle } from 'styled-components';
@@ -13,7 +13,7 @@ import ProDescriptions from '@ant-design/pro-descriptions';
 import ProCard from '@ant-design/pro-card';
 import ProList from '@ant-design/pro-list';
 import CustomValueTypeProvider from '@/components/CustomValueTypeProvider';
-import { Badge, Result } from 'antd';
+import { Badge, Result, Switch } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 import { useReactive } from 'ahooks';
 import _ from 'lodash';
@@ -37,15 +37,32 @@ const GlobalStyle = createGlobalStyle`
   #root{
     height: 100vh;
   }
-  
-  // rightContent居中
-  .ant-pro-right-content {
-    display: flex;
-    align-items: center;
+
+  // 滚动条
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
   }
-  // .ant-pro-right-content-resize{
-  //   display: flex;
-  // }
+  &::-webkit-scrollbar-thumb {
+
+    /*滚动条里面小方块*/
+    // border-radius   : 4px;
+    background-color: #001529;
+
+  
+    background-repeat: repeat;
+    background-size: 30px 30px;
+  }
+  &::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #ededed;
+    border-radius: 4px;
+  }
+  
+
+  
 `;
 
 export default function IndexPage() {
@@ -53,6 +70,7 @@ export default function IndexPage() {
 
   const state = useReactive({
     errorMsg: '',
+    autoRefresh: localStorage.getItem('autoRefresh') === 'true',
   });
 
   // 查询区块数据-Block详情
@@ -61,9 +79,21 @@ export default function IndexPage() {
     error,
     loading: rawblockLoading,
     run: queryRawblockByHash,
+    cancel: autoQueryRawblockByHashCancel,
   } = useRequest(`/rawblock/${blockHash}`, {
     manual: true,
     debounceWait: 300,
+    pollingInterval: 2 * 60 * 1000, // 120s自动轮询
+    pollingWhenHidden: false,
+    onSuccess: () => {
+      // 在这里取消的话就不怕其他地方冲突
+      if (state.autoRefresh == false) {
+        autoQueryRawblockByHashCancel();
+      }
+    },
+    onError: () => {
+      autoQueryRawblockByHashCancel();
+    },
   });
 
   useEffect(() => {
@@ -166,9 +196,27 @@ export default function IndexPage() {
   };
 
   // 动态组件, 减少jsx中写判断
-  let ChildrenComponent = rawblockData && (
+  let ChildrenComponent = (rawblockData || rawblockLoading) && (
     <CustomValueTypeProvider>
-      <ProCardWrapper title="Block Summary">
+      <ProCardWrapper
+        title="Block Summary"
+        extra={
+          <Switch
+            checkedChildren="Auto-refresh is working"
+            unCheckedChildren="Auto-refresh not working"
+            checked={state.autoRefresh}
+            onChange={(value) => {
+              state.autoRefresh = value;
+              localStorage.setItem('autoRefresh', value);
+              if (value) {
+                queryRawblockByHash(new Date().getTime());
+                return;
+              }
+              autoQueryRawblockByHashCancel();
+            }}
+          />
+        }
+      >
         <ProDescriptions {...blockDescriptionsProps} />
       </ProCardWrapper>
       <ProCardWrapper title="Block Transactions">

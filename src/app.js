@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 02:11:01
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 19:29:21
+ * @ Modified time: 2022-04-23 20:14:13
  * @ Description: 运行时配置
  */
 
@@ -18,6 +18,7 @@ const { Search } = Input;
 export function rootContainer(container) {
   return <ConfigProvider locale={enUS}>{container}</ConfigProvider>;
 }
+
 // 配置全局的请求配置
 export const request = {
   prefix: 'https://blockchain.info/',
@@ -51,6 +52,10 @@ export const layout = ({ initialState, setInitialState }) => {
           enterButton="Search"
           onSearch={(value) => {
             history.push(`/${value}`);
+          }}
+          style={{
+            minWidth: '50vw',
+            maxWidth: '75vw',
           }}
         />
       </div>

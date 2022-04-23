@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 21:16:59
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 21:32:13
+ * @ Modified time: 2022-04-23 22:46:02
  * @ Description: 按需加载时候的Loading组件
  */
 
@@ -30,6 +30,7 @@ export default () => {
         style={{
           ...fullCenterStyle,
           background: 'rgb(3, 21, 41)',
+          animation: 'fade 2000ms infinite',
           borderRadius: 4,
           padding: 24,
           width: 240,

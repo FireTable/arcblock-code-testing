@@ -2,13 +2,13 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 11:20:29
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 15:50:56
+ * @ Modified time: 2022-04-23 22:47:53
  * @ Description: 自定义的valueType, https://procomponents.ant.design/components/schema#自定义-valueType
  */
 import React, { useContext } from 'react';
 import ProProvider from '@ant-design/pro-provider';
 import _ from 'lodash';
-import { formatNumber } from '@/utils';
+import { formatNumber } from '../utils';
 
 export default ({ children }) => {
   const values = useContext(ProProvider);

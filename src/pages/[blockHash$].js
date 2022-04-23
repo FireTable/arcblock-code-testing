@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 01:03:48
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 21:13:20
+ * @ Modified time: 2022-04-23 22:46:58
  * @ Description: blockHash信息, :blockHash为可选路由参数, 通过umijs的路由约定自动匹配 /:blockHash
  */
 import styled, { createGlobalStyle } from 'styled-components';
@@ -12,7 +12,7 @@ import { BLOCK_DATA_COLUMNS, TRANSACTION_COLUMNS } from './constants';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import ProCard from '@ant-design/pro-card';
 import ProList from '@ant-design/pro-list';
-import CustomValueTypeProvider from '@/components/CustomValueTypeProvider';
+import CustomValueTypeProvider from '../components/CustomValueTypeProvider';
 import { Badge, Result, Switch } from 'antd';
 import { SmileOutlined } from '@ant-design/icons';
 import { useReactive } from 'ahooks';

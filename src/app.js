@@ -2,14 +2,22 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 02:11:01
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 17:29:56
+ * @ Modified time: 2022-04-23 19:29:21
  * @ Description: 运行时配置
  */
 
-import { Input } from 'antd';
+import { Input, Row } from 'antd';
+import { history } from 'umi';
+import { ConfigProvider } from 'antd';
+import enUS from 'antd/lib/locale/en_US';
+import zhCN from 'antd/lib/locale/zh_CN';
 
 const { Search } = Input;
 
+// 包裹全局ConfigProvider
+export function rootContainer(container) {
+  return <ConfigProvider locale={enUS}>{container}</ConfigProvider>;
+}
 // 配置全局的请求配置
 export const request = {
   prefix: 'https://blockchain.info/',
@@ -35,14 +43,54 @@ export const request = {
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout = ({ initialState, setInitialState }) => {
   return {
-    rightContentRender: () => <Search placeholder="input search text" enterButton="Search" loading />,
+    rightContentRender: () => (
+      <div style={{ display: 'flex', alignItems: 'center', height: '48px' }}>
+        <Search
+          defaultValue={location.pathname.replaceAll('/', '')}
+          placeholder="Please enter the hash"
+          enterButton="Search"
+          onSearch={(value) => {
+            history.push(`/${value}`);
+          }}
+        />
+      </div>
+    ),
     disableContentMargin: false,
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
     collapsedButtonRender: () => <div></div>,
-    footerRender: () => <div></div>,
-    menuHeaderRender: undefined,
+    footerRender: () => (
+      <Row
+        type="flex"
+        align="middle"
+        justify="center"
+        style={{ height: 36, position: 'fixed', bottom: 0, width: '100vw', background: 'white' }}
+      >
+        <a href="https://github.com/FireTable/arcblock-code-testing" target="_blank" rel="noopener noreferrer">
+          [Github Repo]
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
+          [Learn Blocklet]
+        </a>
+      </Row>
+    ),
+    menuHeaderRender: (logo, title) => {
+      return (
+        <div
+          style={{
+            borderRadius: 4,
+            backgroundColor: 'rgb(3, 21, 41)',
+            height: 36,
+            padding: '0px 12px',
+          }}
+        >
+          {logo}
+          {title}
+        </div>
+      );
+    },
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态

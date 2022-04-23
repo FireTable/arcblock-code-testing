@@ -2,6 +2,7 @@ public
 dist
 build
 setupTests.js
+@create-blocklet/*
 
 .blocklet
 node_modules

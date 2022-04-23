@@ -6,4 +6,3 @@ package.json
 .umi
 .umi-production
 .umi-test
-@create-blocklet/**

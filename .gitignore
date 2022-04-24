@@ -8,6 +8,7 @@
 /package-lock.json
 .umi
 coverage
+__snapshots__
 
 # production
 /dist

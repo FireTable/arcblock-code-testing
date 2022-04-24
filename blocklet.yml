@@ -13,9 +13,9 @@ author:
   email: 727471643@qq.com
 repository:
   type: git
-  url: git+https://github.com/blocklet/create-blocklet.git
+  url: git+https://github.com/FireTable/arcblock-code-testing
 specVersion: 1.1.1
-version: 0.2.2
+version: 0.2.3
 logo: logo.png
 files:
   - logo.png

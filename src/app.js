@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 02:11:01
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-24 13:58:23
+ * @ Modified time: 2022-04-24 14:24:17
  * @ Description: 运行时配置
  */
 
@@ -71,7 +71,14 @@ export const layout = ({ initialState, setInitialState }) => {
         type="flex"
         align="middle"
         justify="center"
-        style={{ height: 36, position: 'fixed', bottom: 0, width: '100vw', background: 'white' }}
+        style={{
+          height: 36,
+          position: 'fixed',
+          bottom: 0,
+          width: '100vw',
+          background: 'white',
+          boxShadow: '0px 0px 4px #eee',
+        }}
       >
         <a href="https://github.com/FireTable/arcblock-code-testing" target="_blank" rel="noopener noreferrer">
           [Github Repo]

@@ -5,23 +5,23 @@
 
 ## 快速预览
 
-![PC端](./screenshots/result-pc.png)
+<img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-pc.png"  alt=""/>
 <p align="center">PC端</p>
 
-![手机端](./screenshots/result-mobile.png)
+<p align="center"><img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-mobile.png" width="480" height="1100" alt=""/></p>
 <p align="center">手机端</p>
 
-![create-blocklet](./screenshots/result-umijs-deploy.jpg)
-<p align="center">create-blocklet 的 umijs-templates 可部署</p>
+<img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-umijs-deploy.png" alt=""/>
+<p align="center">部署结果</p>
 
-![dev-mode-blocklet信息](./screenshots/result-devEnv.png)
+<img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-devEnv.png" alt=""/>
 <p align="center">项目 blocklet 信息</p>
 
-![init信息](./screenshots/init-umijs-project.jpg)
-<p align="center">使用 templates-react-umijs-static 初始化项目</p>
+<img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/init-umijs-project.jpg"  alt=""/>
+<p align="center">初始化 umijs 项目</p>
 
-![github](./screenshots/github-actions-auto-test.png)
-<p align="center">github actions autoTest</p>
+<img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/github-actions-auto-test.png"  alt=""/>
+<p align="center">github Actions</p>
 
 ## 简介
 

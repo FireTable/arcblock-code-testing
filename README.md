@@ -12,7 +12,7 @@
 <img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-pc.png"  alt=""/>
 <p align="center">PC端</p>
 
-<p align="center"><img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-mobile.png" width="480" height="1100" alt=""/></p>
+<p align="center"><img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-mobile.png" width="480" height="1100" alt=""/>
 <p align="center">手机端</p>
 
 <img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-umijs-deploy.png" alt=""/>
@@ -32,7 +32,7 @@
 
 ### 项目简介
 
-* 项目使用的第三方Api, 观察发现无需跨域, allow-orgin: *, 故选择使用 static 的相关模板
+* 项目使用的第三方API, 观察发现无需跨域, allow-orgin: *, 故选择使用 static 的相关模板
 * 考虑到想学习一下 create-blocklet 以及 ArcBlock团队: 所有工具设计时候都考虑未来的复用, 故项目模板没有用预设的模板, 而是弄了新模板 templates-react-umijs-static / templates-react-umijs-antdPro-static (多花费了不少时间)
   * 对应的 templates 的修改, 放在了 ./@create-blocklet/templates/*
   * 对应的 index.js 的修改, 放在了 ./@create-blocklet/index.js
@@ -117,8 +117,8 @@ cd ./arcblock-code-testing
 yarn
 
 # 本地启动1: umi启动
+# 首次打开会构建 mfsu, 后续再次会变快, 请耐心等待
 yarn start
-
 # 本地启动2: blocklet启动
 # 如果你使用 blocklet server 的 dev-mode 模式, (模式不能错, 否则需要重装/更换目录)
 blocklet dev

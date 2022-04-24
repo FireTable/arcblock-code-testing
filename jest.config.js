@@ -9,9 +9,9 @@ const ignoreList = [
   // provider无需测试
   '<rootDir>/src/components/CustomValueTypeProvider.js',
   // pageLoading逻辑简单无需测试
-  '<rootDir>/src/components/PageLoading.js ',
-  //  constants无需测试
-  '<rootDir>/src/pages/constants.js ',
+  '<rootDir>/src/components/PageLoading.js',
+  // constants无需测试
+  '<rootDir>/src/pages/constants.js',
 ];
 
 module.exports = {

@@ -102,7 +102,7 @@ export default function BlockHashPage() {
       queryRawblockByHash();
       return;
     }
-    state.errorMsg = 'Hash verification failed.';
+    state.errorMsg = 'Hash verification failed. The size of hash should be 64 bytes.';
   }, [blockHash]);
 
   useEffect(() => {
@@ -234,7 +234,7 @@ export default function BlockHashPage() {
   // 存在报错
   if (blockHash && state.errorMsg) {
     ChildrenComponent = (
-      <Result style={{ margin: '20vh 0' }} status="500" title="Something went wrong." subTitle={state.errorMsg} />
+      <Result style={{ margin: '18vh 0' }} status="500" title="Something went wrong." subTitle={state.errorMsg} />
     );
   }
 

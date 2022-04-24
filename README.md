@@ -11,7 +11,7 @@
 ![手机端](./screenshots/result-mobile.png)
 <p align="center">手机端</p>
 
-![create-blocklet](./screenshots/index-page.png)
+![create-blocklet](./screenshots/init-umijs-project.jpg)
 <p align="center">create-blocklet 的 umijs-templates 可部署</p>
 
 ![dev-mode-blocklet信息](./screenshots/result-devEnv.png)

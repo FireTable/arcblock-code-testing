@@ -60,7 +60,7 @@
   - [ ] 单元测试
     - [x] 搭建jest-enzyme
     - [x] 基本的单元测试
-    - [ ] 提高测试覆盖率
+    - [x] 提高测试覆盖率
 - [x] 部署阶段
   - [x] 完善 Github Actions, 可成功执行, 增加 Auto-Test
   - [x] 配置 blocklet.yml

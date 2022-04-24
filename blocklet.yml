@@ -1,5 +1,5 @@
-name: blocklet-project
-title: blocklet-project
+name: blocklet-umijs
+title: blocklet-umijs
 description: A Blocklet Server blocklet, use umijs(react) framework
 keywords:
   - blocklet
@@ -14,8 +14,8 @@ author:
 repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
-specVersion: 1.1.2
-version: 0.2.0
+specVersion: 1.1.1
+version: 0.2.2
 logo: logo.png
 files:
   - logo.png

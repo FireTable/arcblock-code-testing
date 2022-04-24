@@ -8,6 +8,7 @@ const port = process.env.BLOCKLET_PORT || process.env.PORT || 8080;
 
 const { REACT_APP_ENV } = process.env;
 export default defineConfig({
+  publicPath: './',
   // 自动使用publicPath的内容
   runtimePublicPath: true,
   outputPath: 'build',

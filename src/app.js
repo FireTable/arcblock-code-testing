@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 02:11:01
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-24 09:53:39
+ * @ Modified time: 2022-04-24 13:58:23
  * @ Description: 运行时配置
  */
 
@@ -13,9 +13,6 @@ import enUS from 'antd/lib/locale/en_US';
 import zhCN from 'antd/lib/locale/zh_CN';
 
 const { Search } = Input;
-
-// While the blocklet is deploy to a sub path, this will be work properly.
-window.publicPath = window?.blocklet?.prefix || '/';
 
 // 包裹全局ConfigProvider
 export function rootContainer(container) {
@@ -50,7 +47,8 @@ export const layout = ({ initialState, setInitialState }) => {
     rightContentRender: () => (
       <div style={{ display: 'flex', alignItems: 'center', height: '48px' }}>
         <Search
-          defaultValue={location.pathname.replaceAll('/', '')}
+          allowClear
+          defaultValue={history.location.pathname.replaceAll('/', '')}
           placeholder="Please enter the hash"
           enterButton="Search"
           onSearch={(value) => {

@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 01:03:48
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-24 01:23:03
+ * @ Modified time: 2022-04-24 13:52:48
  * @ Description: blockHash信息, :blockHash为可选路由参数, 通过umijs的路由约定自动匹配 /:blockHash
  */
 import styled, { createGlobalStyle } from 'styled-components';
@@ -201,8 +201,8 @@ export default function BlockHashPage() {
         title="Block Summary"
         extra={
           <Switch
-            checkedChildren="Auto-refresh is working"
-            unCheckedChildren="Auto-refresh not working"
+            checkedChildren="Auto-Refresh"
+            unCheckedChildren="Self-Refresh"
             checked={state.autoRefresh}
             onChange={(value) => {
               state.autoRefresh = value;

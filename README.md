@@ -3,6 +3,10 @@
 本项目来自 ArcBlock 的 Coding-Test, 通过使用 [Blockchain.com](blockchain.com) 的 [API 接口](https://www.blockchain.com/api/blockchain_api), 实现 [类似页面](https://www.blockchain.com/btc/block/00000000000000000007878ec04bb2b2e12317804810f4c26033585b3f81ffaa).
 
 
+## Launch on Blocklet Server
+
+[![Launch on Blocklet Server](https://assets.arcblock.io/icons/launch_on_blocklet_server.svg)](https://install.arcblock.io/?action=blocklet-install&meta_url=https%3A%2F%2Fgithub.com%2FFireTable%2Farcblock-code-testing%2Freleases%2Fdownload%2Fv1.0.0%2Fblocklet.json)
+
 ## 快速预览
 
 <img src="https://github.com/FireTable/arcblock-code-testing/blob/main/screenshots/result-pc.png"  alt=""/>

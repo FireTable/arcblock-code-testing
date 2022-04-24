@@ -17,7 +17,7 @@
 ![dev-mode-blocklet信息](./screenshots/result-devEnv.png)
 <p align="center">项目 blocklet 信息</p>
 
-![init](./screenshots/init-umijs-project.jpg)
+![init信息](./screenshots/init-umijs-project.jpg)
 <p align="center">使用 templates-react-umijs-static 初始化项目</p>
 
 ![github](./screenshots/github-actions-auto-test.png)

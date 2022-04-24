@@ -7,7 +7,7 @@ This blocklet is a static project, which means this is a frontend application. I
 
 ## Launch on Blocklet Server
 
-[![Launch on Blocklet Server](https://assets.arcblock.io/icons/launch_on_blocklet_server.svg)](https://install.arcblock.io/?action=blocklet-install&meta_url=https%3A%2F%2Fgithub.com%2FFireTable%2Farcblock-code-testing%2Freleases%2Fdownload%2Fv0.2.0%2Fblocklet.json)
+[![Launch on Blocklet Server](https://assets.arcblock.io/icons/launch_on_blocklet_server.svg)](https://install.arcblock.io/?action=blocklet-install&meta_url=https%3A%2F%2Fgithub.com%2FFireTable%2Farcblock-code-testing%2Freleases%2Fdownload%2Fv0.2.2%2Fblocklet.json)
 
 ## File Structure
 

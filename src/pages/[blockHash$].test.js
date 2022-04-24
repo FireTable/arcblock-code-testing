@@ -1,19 +1,25 @@
 import BlockHashPage from './[blockHash$]';
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 // 对[blockHash$].js进行单元测试   --------------------------------------------------
+describe('[blockHash$]页面测试', () => {
+  beforeEach(() => {});
 
-test('show Waiting for you...', () => {
-  const wrapper = mount(<BlockHashPage />);
-  const p = wrapper.find('.ant-result-title');
-  expect(p.text()).toBe('Waiting for you...');
+  afterEach(() => {});
+
+  test('test snapshot', () => {
+    const wrapper = shallow(<BlockHashPage />);
+    expect(toJson(wrapper)).toMatchSnapshot(); // 快照
+  });
+
+  test('show Waiting for you...', () => {
+    const wrapper = mount(<BlockHashPage />);
+    const p = wrapper.find('.ant-result-title');
+    // 空白页校验
+    expect(p.text()).toBe('Waiting for you...');
+  });
 });
-
-// test('blockHash: 33 => show Something went wrong.', () => {
-//   const wrapper = mount(<BlockHashPage />);
-//   const p = wrapper.find('.ant-result-title');
-//   expect(p.text()).toBe('Something went wrong.');
-// });
 
 // 对[blockHash$].js进行单元测试   --------------------------------------------------

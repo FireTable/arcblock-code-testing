@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[blockHash$]页面测试 show Waiting for you... 1`] = `null`;
+
+exports[`[blockHash$]页面测试 test snapshot 1`] = `
+<styled.div>
+  <Memo(l) />
+  <Result
+    icon={<ForwardRef(SmileOutlined) />}
+    style={
+      Object {
+        "margin": "30vh 0",
+      }
+    }
+    subTitle=""
+    title="Waiting for you..."
+  />
+</styled.div>
+`;

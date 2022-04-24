@@ -1,152 +1,151 @@
-# Getting Started with Create Blocklet
+# ArcBlock-Coding-Test by umijs-templates
 
-This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
-
-This blocklet is a static project, which means this is a frontend application. It's contained `client` code.
+本项目来自 ArcBlock 的 Coding-Test, 通过使用 [Blockchain.com](blockchain.com) 的 [API 接口](https://www.blockchain.com/api/blockchain_api), 实现 [类似页面](https://www.blockchain.com/btc/block/00000000000000000007878ec04bb2b2e12317804810f4c26033585b3f81ffaa).
 
 
-## Launch on Blocklet Server
+## 快速预览
 
-[![Launch on Blocklet Server](https://assets.arcblock.io/icons/launch_on_blocklet_server.svg)](https://install.arcblock.io/?action=blocklet-install&meta_url=https%3A%2F%2Fgithub.com%2FFireTable%2Farcblock-code-testing%2Freleases%2Fdownload%2Fv0.2.3%2Fblocklet.json)
+![PC端](./screenshots/result-pc.png)
+<p align="center">PC端</p>
 
-## File Structure
+![手机端](./screenshots/result-mobile.png)
+<p align="center">手机端</p>
 
-- public/ - static files
-  - favicon.ico - favicon
-  - favicon.svg - favicon
-  - index.html - main html file, template for react
-- screenshots/ - Screenshots
-- src/ - Client side code (A standard react app structure)
-- .env - Environment variables
-- .env.local - Local environment variables
-- .eslintrc.js - ESLint configuration
-- .gitignore - Git ignore file
-- .prettierrc - Prettier configuration
-- blocklet.md - Blocklet README
-- blocklet.yml - Blocklet configuration
-- LICENSE - License file
-- logo.png - Blocklet logo file
-- Makefile - Makefile
-- package.json - Npm package file
-- README.md - A guide for this blocklet
-- version - Version file
+![create-blocklet](./screenshots/index-page.png)
+<p align="center">create-blocklet 的 umijs-templates 可部署</p>
 
-## Development
+![dev-mode-blocklet信息](./screenshots/result-devEnv.png)
+<p align="center">项目 blocklet 信息</p>
 
-1. Make sure you have [@blocklet/cli](https://www.npmjs.com/package/@blocklet/cli) installed
+![init](./screenshots/init-umijs-project.jpg)
+<p align="center">使用 templates-react-umijs-static 初始化项目</p>
 
-   Blocklet needs blocklet server as a dependency. So you need to install it first.  
-   `npm install -g @blocklet/cli`  
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
+![github](./screenshots/github-actions-auto-test.png)
+<p align="center">github actions autoTest</p>
 
-2. Init blocklet server & start blocklet server
+## 简介
 
-   Before starting an blocklet server, you need to init blocklet server.  
-   `blocklet server init --mode=debug`  
-   `blocklet server start`  
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
 
-3. Go to the project directory `cd [name]`
-4. Install dependencies: `npm install` or `yarn`
-5. Start development server: `blocklet dev`
+### 项目简介
 
-## Bundle
+* 项目使用的第三方Api, 观察发现无需跨域, allow-orgin: *, 故选择使用 static 的相关模板
+* 考虑到想学习一下 create-blocklet 以及 ArcBlock团队: 所有工具设计时候都考虑未来的复用, 故项目模板没有用预设的模板, 而是弄了新模板 templates-react-umijs-static / templates-react-umijs-antdPro-static (多花费了不少时间)
+  * 对应的 templates 的修改, 放在了 ./@create-blocklet/templates/*
+  * 对应的 index.js 的修改, 放在了 ./@create-blocklet/index.js
+  * 覆盖一下 [create-blocklet](https://www.arcblock.io/zh/developer-portal), node index.js 后可以umijs的模板
+* 使用 [umijs](https://umijs.org) 作为主框架, 减少项目的配置
+* 使用 [proComponents](https://procomponents.ant.design/components) 作为主要组件库, 减少组件的开发
+* 使用 [styled-components](https://github.com/styled-components/styled-components) CSS IN JS, 编写项目的样式
+* 使用 [lodash](https://github.com/styled-components/styled-components) 第三方工具库, 减少开发和单元测试量
+* 使用 [jest-enzyme](https://github.com/enzymejs/enzyme) 编写自动化测试
+  * 但是测试覆盖面不够广, 预留时间较短, 待完善
+  * enzyme似乎也没支持React17, 配合umijs有各种错误
 
-After developing a blocklet, you may need to bundle it. Use `npm run bundle` command.
+### TODO List
 
-## Deploy
+- [x] 搭建项目 
+  - [x] (额外内容) 编写 umijs-templates 的 blocklet, 完善 index.js
+  - [x] 使用 create-blotklet, init project, 安装各种依赖
+- [x] 开发过程
+  - [x] 安装使用 Blocklet Server
+  - [x] 完成 Coding-Test 基本功能
+  - [x] (额外内容) 优化体验
+    - [x] Page按需加载 Loading
+    - [x] 增加 Auto-Refresh, 2分钟一次
+    - [x] 欢迎页
+  - [ ] 单元测试
+    - [x] 搭建jest-enzyme
+    - [x] 基本的单元测试
+    - [ ] 提高测试覆盖率
+- [x] 部署阶段
+  - [x] 完善 Github Actions, 可成功执行, 增加 Auto-Test
+  - [x] 配置 blocklet.yml
+  - [x] (额外内容) 验证/测试/修复, umijs-templates 问题
+  - [ ] (额外内容) 部署到家里面的私网环境, 提供公网访问 
 
-- If you want to deploy this blocklet to local blocklet server, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
-  > Or you can simply use `npm run deploy` command.
-- If you want to deploy this blocklet to remote blocklet server, you can use the command below.
+### 代码目录说明
 
-  ```shell
-  blocklet deploy .blocklet/bundle --endpoint {your blocklet server url} --access-key {blocklet server access key} --access-secret {blocklet server access secret}
-  ```
+```bash
 
-  > Make sure the blocklet is bundled before deployment.
+# macOS安装 tree
+brew install tree
 
-## Upload to blocklet store
+# 执行一下
+tree -I "node_modules|test*|LICENSE|README.en.md|.umi|dist|build" -L 3
 
-- If you want to upload the blocklet to any store for other users to download and use, you can following the following instructions.
+# 重点目录解释
+── @create-blocklet     // 来自 create-blocklet 仓库的 diff 变更
+│   ├── index.js        // 修改后的 index.js
+│   └── templates       // 新增的umijs-templates
+├── blocklet.md
+├── blocklet.yml  
+├── jest.config.js      // jest配置
+├── public              // 静态资源
+├── screenshots         // preview截图
+├── setup-enzyme.js
+├── src                 // 代码目录
+│   ├── app.js          // umijs 运行时全局配置
+│   ├── components      // 组件大全
+│   │   ├── CustomValueTypeProvider.js       // ***** CustomValueTypeProvider 组件, proComponents用
+│   │   └── PageLoading.js                   // PageLoading 组件, umijs用
+│   ├── global.less
+│   ├── pages
+│   │   ├── [blockHash$].js                  // ***** [blockHash$] 页面, umjis的动态路由
+│   │   ├── [blockHash$].test.js             // 页面单元测试
+│   │   ├── constants.js                     // ***** clomuns 常量, 用来渲染页面
+│   │   └── document.ejs
+│   ├── utils.js                             // 工具方法
+│   └── utils.test.js                        // 工具方法单元测试
 
-  Bump version at first.
+```
 
-  ```shell
-  make bump-version
-  ```
 
-  Then config blocklet store url.
-  You can use those store url in below.
+## 如何使用
 
-  1. [https://store.blocklet.dev/](https://store.blocklet.dev/)
-  2. [https://dev.store.blocklet.dev/](https://dev.store.blocklet.dev/)
-  3. A blocklet store started by yourself.
-     > Make sure you have installed a `blocklet store` on your own blocklet server. Check it on here: [https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
+```bash
+# 首先找一个你喜欢的目录
+git clone https://github.com/FireTable/arcblock-code-testing.git
 
-  ```shell
-  blocklet config set store {store url}
-  ```
+# 进入目录
+cd ./arcblock-code-testing
 
-  Get a `accessToken` from blocklet store.
+# 安装依赖
+yarn
 
-  > Why we need a `accessToken`?  
-  > A `accessToken` is genrate by blocklet store, which help us upload our blocklet to any store.
+# 本地启动1: umi启动
+yarn start
 
-  Set `accessToken` to blocklet config
+# 本地启动2: blocklet启动
+# 如果你使用 blocklet server 的 dev-mode 模式, (模式不能错, 否则需要重装/更换目录)
+blocklet dev
 
-  ```shell
-  blocklet config set accessToken {accessToken}
-  ```
+# 运行测试
+yarn test
 
-  Upload a new version to a store.
+# 编译成生产环境的代码
+yarn build
 
-  > Make sure the blocklet is bundled before upload.
+# 打包成一个 blocklet
+yarn bundle
 
-  ```shell
-  blocklet upload
-  ```
+# 发布到本地 abtnode
+yarn deploy
+```
 
-  Or you can simply use `npm run upload` command.
+## 项目感受 
 
-- You also can upload a new version to blocklet store by Github CI.  
-  Bump version at first.
+### 试用 Blocklet-Server 感受
 
-  ```shell
-  make bump-version
-  ```
+挺成熟的平台, 类比起来感觉是 分布式版本的 docker/k8s, 做了很多减法
 
-  Push your code to Github main/master branch, or make a pull request to the main/master branch.  
-  The CI workflow will automatically upload a new version to a store.
+美中不足的是, docker版本用了一下, 没有特权模式没办法使用 
 
-## Q & A
+然后本机部署又要独占nginx, 我需要腾出来一块开发板, 重装后才能安装上
 
-1. Q: How to change a blocklet's name?
 
-   A: Change the `name` field in the `package.json` file, change the `name` field in the `blocklet.yml` file.
+### 开发感受
 
-   You can also change the `title` field and `description` field in the `blocklet.yml` file.
+挺有趣的过程, 文档写的还不错 
 
-   Run `blocklet meta` command, you will get a `did` config, copy the `did` value.
+目前工具挺充足的
 
-   Replace this command `"bundle": "PUBLIC_URL='/.blocklet/proxy/{did}' npm run build",` in `package.json`
-
-   Replace `did` field in the `blocklet.yml`
-
-2. Q: How to change a blocklet's logo?
-
-   Change the `logo.png` file root folder.
-
-   Or you can change the `logo` field in the `blocklet.yml` file.
-
-   > Make sure you have added the logo path to the `blocklet.yml` file `files` field.
-
-## Learn More
-
-- Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
-- Full document of Blocklet Server & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
-
-## License
-
-The code is licensed under the Apache 2.0 license found in the
-[LICENSE](LICENSE) file.

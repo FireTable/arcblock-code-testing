@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Auto Test
+        run: yarn run test:coverage
+
       - name: Blocklet workflow
         uses: blocklet/action-workflow@v1
         with:

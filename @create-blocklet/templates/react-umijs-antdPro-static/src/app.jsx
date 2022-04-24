@@ -10,6 +10,10 @@ const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */
 
+
+// While the blocklet is deploy to a sub path, this will be work properly.
+window.publicPath = window?.blocklet?.prefix || '/';
+
 export const initialStateConfig = {
   loading: <PageLoading />,
 };

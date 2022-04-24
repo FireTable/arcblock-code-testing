@@ -2,7 +2,7 @@
  * @ Author: Liang Yongzhuo
  * @ Create Time: 2022-04-23 02:11:01
  * @ Modified by: Liang Yongzhuo
- * @ Modified time: 2022-04-23 20:14:13
+ * @ Modified time: 2022-04-24 09:53:39
  * @ Description: 运行时配置
  */
 
@@ -13,6 +13,9 @@ import enUS from 'antd/lib/locale/en_US';
 import zhCN from 'antd/lib/locale/zh_CN';
 
 const { Search } = Input;
+
+// While the blocklet is deploy to a sub path, this will be work properly.
+window.publicPath = window?.blocklet?.prefix || '/';
 
 // 包裹全局ConfigProvider
 export function rootContainer(container) {

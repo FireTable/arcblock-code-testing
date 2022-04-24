@@ -1,5 +1,5 @@
-name: Blockchain Explorer
-title: Blockchain Explorer
+name: blockchain-Explorer
+title: Blockchain-Explorer
 description: A Blocklet Server blocklet, use umijs(react) framework
 keywords:
   - blocklet

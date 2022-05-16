@@ -35,7 +35,7 @@ homepage: ''
 license: MIT
 payment:
   price:
-    - address: z35n3WVTnN7KrR4gXn3szR6oneVefkBBx78Fc
+    - address: zNKdFm85rEDYTfXJDuwtoSc4DNNCJfgYFwVy
       value: 1.11
 timeout:
   start: 60

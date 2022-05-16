@@ -33,7 +33,9 @@ community: ''
 documentation: ''
 homepage: ''
 license: MIT
-payment: []
+payment: 
+  price: []
+  share: []
 timeout:
   start: 60
 requirements:

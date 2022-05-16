@@ -6,16 +6,16 @@ keywords:
   - react
   - umijs
 group: static
-did: z8iZmdaP7DEBa5g4w9w6RokmxcYPWstWn1tkF
+did: z1U6cNEbX71MeMNxj7QLqHbrDfStnhtj7dw
 main: build
 author:
-  name: 梁永焯
+  name: Yongzhuo Liang
   email: 727471643@qq.com
 repository:
   type: git
   url: git+https://github.com/FireTable/arcblock-code-testing
 specVersion: 1.1.1
-version: 1.0.5
+version: 1.0.6
 logo: logo.png
 files:
   - logo.png
@@ -32,10 +32,11 @@ interfaces:
 community: ''
 documentation: ''
 homepage: ''
-license: ''
+license: MIT
 payment:
-  price: []
-  share: []
+  price:
+    - address: z1U6cNEbX71MeMNxj7QLqHbrDfStnhtj7dw
+      value: 1.11
 timeout:
   start: 60
 requirements:

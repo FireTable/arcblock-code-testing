@@ -6,16 +6,16 @@ keywords:
   - react
   - umijs
 group: static
-did: z1U6cNEbX71MeMNxj7QLqHbrDfStnhtj7dw
+did: z1WM56pVm5Prpct3aNLtk3eU8NNVk2veurB
 main: build
 author:
   name: Yongzhuo Liang
-  email: 727471643@qq.com
+  email: firetable@foxmail.com
 repository:
   type: git
   url: git+https://github.com/FireTable/arcblock-code-testing
 specVersion: 1.1.1
-version: 1.1.0
+version: 1.1.1
 logo: logo.png
 files:
   - logo.png

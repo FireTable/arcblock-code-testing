@@ -1,3 +1,6 @@
+## 1.3.1 (六月 29, 2022)\n
+- add blocklet.json
+
 ## 1.3.0 (六月 29, 2022)\n
 - update version 
 

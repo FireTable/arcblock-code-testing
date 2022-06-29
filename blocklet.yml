@@ -1,14 +1,17 @@
 name: blocklet-umijs
-version: 1.3.0
-title: blocklet-umijs
+version: 1.3.1
 description: A Blocklet Server blocklet, use umijs(react) framework
+group: static
+main: build
+capabilities:
+  clusterMode: false
+  component: true
+title: blocklet-umijs
 keywords:
   - blocklet
   - react
   - umijs
-group: static
 did: z8ia1EBeJtiFisiz4XdCX9LETXcCVjZQq8Vyg
-main: build
 author:
   name: Yongzhuo Liang
   email: firetable@foxmail.com
@@ -57,9 +60,6 @@ environments:
     default: 'no'
     secure: false
     shared: true
-capabilities:
-  clusterMode: false
-  component: true
 screenshots: []
 children:
   - name: publish-kit

@@ -1,0 +1,18 @@
+{
+  "name": "umijs-react",
+  "description": "umijs-reactr",
+  "version": "1.3.1",
+  "group": "static",
+  "color": "primary",
+  "main": "app/",
+  "provider": "蠢",
+  "requiredEnvironments": {
+    "name": "DEBUG",
+    "description": "Enable test flag",
+    "required": false,
+    "default": "arcblock*"
+  },
+  "capabilities": {
+    "dynamicPathPrefix": true
+  }
+}

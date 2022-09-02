@@ -38,7 +38,7 @@ homepage: ''
 license: MIT
 payment:
   price:
-    - address: z1goN4D6EMJxgWusQZNNdPrng5Et87sppXx
+    - address: z35n3WVTnN7KrR4gXn3szR6oneVefkBBx78Fc
       value: 8
   share: []
 timeout:
